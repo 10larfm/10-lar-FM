@@ -14,35 +14,35 @@ module.exports = {
       if (!channel)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setAuthor("Bir ses kanalına katılmanız gerekiyor.", "https://cdn.discordapp.com/emojis/796283006280663060.png?v=1")
+          .setAuthor("Bir ses kanalına katılmanız gerekiyor.", "//EMOJİ URL//")
         );
       const player = client.manager.players.get(message.guild.id);
       if (!player)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setAuthor("Hiçbir şey oynamıyor", "https://cdn.discordapp.com/emojis/796283006280663060.png?v=1")
+          .setAuthor("Hiçbir şey oynamıyor", "//EMOJİ URL//")
         );
       if (channel.id !== player.voiceChannel)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setAuthor("Bu komutu kullanmak için benim ses kanalımda olmanız gerekiyor!", "https://cdn.discordapp.com/emojis/796283006280663060.png?v=1")
+          .setAuthor("Bu komutu kullanmak için benim ses kanalımda olmanız gerekiyor!", "//EMOJİ URL//")
           .setDescription(`Kanal ismi: \`${message.guild.channels.cache.get(player.voiceChannel).name}\``)
         );
       if (!player.queue.current)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setAuthor("Bu sunucuda şu anda çalınan şarkı yok.", "https://cdn.discordapp.com/emojis/796283006280663060.png?v=1")
+          .setAuthor("Bu sunucuda şu anda çalınan şarkı yok.", "//EMOJİ URL//")
         );
       player.destroy();
       return message.channel.send(new MessageEmbed()
-        .setAuthor("Durduruldu ve Kanalınızdan ayrıldı", "https://cdn.discordapp.com/emojis/796354949755437086.png?v=1")
+        .setAuthor("Durduruldu ve Kanalınızdan ayrıldı", "//EMOJİ URL//")
         .setColor(ee.color)
       );
     } catch (e) {
         console.log(String(e.stack).bgRed)
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
-            .setAuthor(`Bir hata oluştu`, "https://cdn.discordapp.com/emojis/796283006280663060.png?v=1")
+            .setAuthor(`Bir hata oluştu`, "//EMOJİ URL//")
             .setDescription(`\`\`\`${e.stack}\`\`\``)
         );
     }
